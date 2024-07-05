@@ -1,22 +1,29 @@
+// Wrap the code in an Immediately Invoked Function Expression (IIFE)
+// This helps prevent polluting the global scope with variables
 (() => {
-	"use strict";
+	"use strict"; // Enforce strict mode for better coding practices
 
-	// Fetch all the forms we want to apply custom Bootstrap validation styles to
+	// Select all forms with the class "needs-validation"
 	const forms = document.querySelectorAll(".needs-validation");
 
-	// Loop over them and prevent submission
+	// Convert the NodeList to an array for easier iteration
 	Array.from(forms).forEach((form) => {
+		// Add an event listener for the "submit" event on each form
 		form.addEventListener(
 			"submit",
 			(event) => {
+				// Check if the form is valid using the built-in checkValidity() method
 				if (!form.checkValidity()) {
+					// Prevent the default form submission behavior
 					event.preventDefault();
+					// Stop event propagation to prevent further validation handling (optional)
 					event.stopPropagation();
 				}
 
+				// Add the class "was-validated" to the form after submission (likely for styling purposes)
 				form.classList.add("was-validated");
 			},
-			false
+			false // Capture the event in the bubbling phase (optional, defaults to true)
 		);
 	});
 })();

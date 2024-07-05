@@ -1,7 +1,11 @@
+// Import Mongoose for defining the schema
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
+
+// Import the Review model (assuming it's in a separate file)
 const Review = require("./review.js");
 
+// Define the Listing schema
 const listingSchema = new Schema({
 	title: {
 		type: String,
@@ -18,30 +22,35 @@ const listingSchema = new Schema({
 	reviews: [
 		{
 			type: Schema.Types.ObjectId,
-			ref: "Review",
+			ref: "Review", // Reference the Review model for nested documents
 		},
 	],
 	owner: {
 		type: Schema.Types.ObjectId,
-		ref: "User",
+		ref: "User", // Reference the User model for owner information
 	},
 	geometry: {
 		type: {
-			type: String, // Don't do `{ location: { type: String } }`
-			enum: ["Point"], // 'location.type' must be 'Point'
+			type: String,
+			enum: ["Point"], // Only support Point geometry for now
 			required: true,
 		},
 		coordinates: {
-			type: [Number],
+			type: [Number], // Array of numbers for longitude and latitude
 			required: true,
 		},
 	},
 });
 
+// Post middleware hook for "findOneAndDelete"
 listingSchema.post("findOneAndDelete", async (listing) => {
 	if (listing) {
+		// If a listing is deleted, delete all its associated reviews
 		await Review.deleteMany({ _id: { $in: listing.reviews } });
 	}
 });
+
+// Create the Listing model based on the schema
 const Listing = mongoose.model("Listing", listingSchema);
+
 module.exports = Listing;

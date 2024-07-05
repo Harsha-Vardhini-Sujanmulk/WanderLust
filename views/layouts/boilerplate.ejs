@@ -22,14 +22,11 @@
 		<link
 			href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap"
 			rel="stylesheet" />
-		<link
-			href="https://api.mapbox.com/mapbox-gl-js/v3.1.2/mapbox-gl.css"
-			rel="stylesheet" />
-		<script src="https://api.mapbox.com/mapbox-gl-js/v3.1.2/mapbox-gl.js"></script>
 	</head>
 
 	<body>
-		<%- include("../includes/navbar.ejs") %>
+		<%- include("../includes/navbar.ejs", { currUser: currUser }) %>
+
 		<div class="container">
 			<%- include("../includes/flash.ejs") %> <%- body %>
 		</div>
