@@ -69,7 +69,6 @@ module.exports.createListing = async (req, res, next) => {
     const newListing = new Listing(req.body.listing);
     newListing.owner = req.user._id; // Set the owner ID to the currently logged-in user
     newListing.image = { url, filename }; // Store image details
-    newListing.geometry = response.body.features[0].geometry; // Set listing geometry from geocoding response
 
     // Save the new listing to the database
     const savedListing = await newListing.save();
