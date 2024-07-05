@@ -29,17 +29,6 @@ const listingSchema = new Schema({
 		type: Schema.Types.ObjectId,
 		ref: "User", // Reference the User model for owner information
 	},
-	geometry: {
-		type: {
-			type: String,
-			enum: ["Point"], // Only support Point geometry for now
-			required: true,
-		},
-		coordinates: {
-			type: [Number], // Array of numbers for longitude and latitude
-			required: true,
-		},
-	},
 });
 
 // Post middleware hook for "findOneAndDelete"
