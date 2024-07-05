@@ -46,7 +46,7 @@ Welcome to the WanderLust (Airbnb Clone) project! This repository contains a ful
 
 1. **Clone the repository:**
    ```sh
-   git clone https://github.com/NandanAdi/WanderLust.git
+   git clone https://github.com/Harsha-Vardhini-Sujanmulk/WanderLust.git
    cd WanderLust
    ```
 
