@@ -17,7 +17,6 @@ Welcome to the WanderLust (Airbnb Clone) project! This repository contains a ful
 - **User Authentication:** Users can create accounts and log in to manage their properties.
 - **Property Listings:** Users can create, edit, and delete their own property listings.
 - **Reviews:** Users can leave reviews on properties they have visited.
-- **Map Integration:** Properties are displayed on a map using Mapbox.
 - **Image Uploads:** Property images are uploaded and stored in Cloudinary.
 - **Responsive Design:** The application is styled with Bootstrap for a responsive and user-friendly interface.
 
