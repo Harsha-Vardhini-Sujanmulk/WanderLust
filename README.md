@@ -35,7 +35,6 @@ Welcome to the WanderLust (Airbnb Clone) project! This repository contains a ful
 - **Frontend:**
   - [EJS](https://ejs.co/) for templating
   - [Bootstrap](https://getbootstrap.com/) for styling
-  - [Mapbox](https://www.mapbox.com/) for maps
 
 - **Cloud Services:**
   - [Cloudinary](https://cloudinary.com/) for image storage
