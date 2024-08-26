@@ -59,7 +59,6 @@ Welcome to the WanderLust (Airbnb Clone) project! This repository contains a ful
    CLOUDINARY_CLOUD_NAME=your_cloud_name
    CLOUDINARY_API_KEY=your_api_key
    CLOUDINARY_API_SECRET=your_api_secret
-   MAPBOX_TOKEN=your_mapbox_token
    MONGODB_URI=your_mongodb_uri
    SESSION_SECRET=your_session_secret
    ```
