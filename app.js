@@ -29,6 +29,7 @@ const userRouter = require("./routes/user.js");
 
 // Define the database URL from the environment variable
 const dbUrl = process.env.ATLAS_DB_URL;
+// const dbUrl = "mongodb://localhost:27017/wanderlust";
 
 // Connect to the MongoDB database asynchronously
 main()
@@ -112,7 +113,7 @@ app.all("*", (req, res, next) => {
 
 // Error handling middleware
 app.use((err, req, res, next) => {
-  let { statusCode = 500, message = "Something went wrong!.." } = err;  // Destructure error object, set defaults for status and message
+  let { statusCode = 500, message = "Something went wrong!.." } = err; // Destructure error object, set defaults for status and message
   res.status(statusCode).render("error.ejs", { message }); // Render an error template with the error message
 });
 
